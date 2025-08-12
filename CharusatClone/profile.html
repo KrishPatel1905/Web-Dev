@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Profile</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      /* background-color: #000; */
+      padding: 40px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      width: 320px;
+      height: auto;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-container {
+      max-width: 1100px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
+      color: rgb(8, 65, 127);
+      margin-bottom: 30px;
+    }
+
+    .profile-pic-section {
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .profile-pic-section img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgb(8, 65, 127);
+      margin-bottom: 15px;
+    }
+
+    .profile-pic-section input[type="file"] {
+      font-size: 14px;
+    }
+
+    .profile-form {
+      flex: 2;
+      min-width: 400px;
+    }
+
+    .profile-field {
+      margin-bottom: 16px;
+    }
+
+    .profile-field label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .profile-field input,
+    .profile-field select,
+    .profile-field textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .save-btn {
+      display: block;
+      margin: 30px auto 0;
+      background-color: rgb(8, 65, 127);
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background-color: rgb(6, 50, 100);
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .profile-pic-section img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+      body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      border-top: 4px solid #005a9c; /* Blue border on top */
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-section img {
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 16px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      /* color: black; */
+      font-weight: bold;
+    }
+
+    .nav-links a.active {
+      color: #4CAF50; /* Green */
+    }
+
+    .btn-enquire {
+      background-color: #f26722;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .dark{
+      background-color: #005a9c;
+    }
+  </style>
+  </style>
+</head>
+<body>
+  <button onclick="document.body.style.background='black'" class="dark">DARK</button>
+  <button onclick="document.body.style.background='white'">WHITE</button>
+   <div class="navbar">
+    <div class="logo-section">
+      <img src="CHARUSAT_NEW.6cad095d.png" alt="CHARUSAT Logo">
+      <div>
+        <div style="font-size: 28px; font-weight: bold;">CHARUSAT<sup>®</sup></div>
+        <div style="font-size: 12px; color: #005a9c;">CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="result.html">Result</a>
+      <a href="#">Profile</a>
+       <a href="feedback.html">Feedback</a>
+      <a href="regiater1.html">Register</a>
+    </div>
+
+    <button class="btn-enquire">Enquire Now – Admission 2025</button>
+  </div>
+
+  <div class="header">
+    <!-- <img src="CHARUSAT_NEW.6cad095d.png" alt="Charusat Logo"> -->
+  </div>
+
+  <div class="profile-container">
+    <h2>Student Profile</h2>
+
+    <div class="profile-pic-section">
+      <img src="Charusat Logo.jpeg" alt="Profile Picture">
+      <br>
+      <label for="profile-pic">Upload Profile Picture:</label>
+      <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+    </div>
+
+    <div class="profile-form">
+      <form action="submit_profile.php" method="POST" enctype="multipart/form-data">
+
+        <div class="profile-field">
+          <label for="fullname">Name (Full Name):</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="fathername">Father Name:</label>
+          <input type="text" id="fathername" name="fathername" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="mothername">Mother Name:</label>
+          <input type="text" id="mothername" name="mothername" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="mobile">Mobile No:</label>
+          <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" required></textarea>
+        </div>
+
+        <div class="profile-field">
+          <label for="pincode">Pin Code:</label>
+          <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="taluka">Taluka:</label>
+          <input type="text" id="taluka" name="taluka" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="district">District:</label>
+          <input type="text" id="district" name="district" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="nationality">Nationality:</label>
+          <input type="text" id="nationality" name="nationality" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="religion">Religion:</label>
+          <input type="text" id="religion" name="religion" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="subcaste">Sub-Caste:</label>
+          <input type="text" id="subcaste" name="subcaste" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="aadhar">Aadhar Number:</label>
+          <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="12-digit number" required>
+        </div>
+
+        <div class="profile-field">
+          <label for="bloodgroup">Blood Group:</label>
+          <select id="bloodgroup" name="bloodgroup" required>
+            <option value="">--Select--</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+        </div>
+
+        <button type="submit" class="save-btn">Save Profile</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

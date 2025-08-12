@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Result Form</title>
+  <style>
+    body {
+      background: #00b7ff;
+      /* background-image: url(Charotar-University-of-Science-Technology.webp); */
+      /* background-repeat: no-repeat; */
+      background-position: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .rollno {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      color: red;
+    }
+
+    .rollno input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .bt {
+      background-color: rgb(19, 19, 255);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result-container {
+      text-align: center;
+      /* background-color: red ; */
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+    <center><img src="Charotar-University-of-Science-Technology.webp" alt="" width="600" height="400"></center>
+  <!-- <h1 class="result-container">Result</h1> -->
+
+  <form action="" class="rollno">
+    <div><input type="text" id="Department" placeholder="Department" required /></div>
+    <br>
+    <div><input type="text" id="RollNo1" placeholder="RollNo" required /></div>
+    <div><input type="password" id="Password" placeholder="Password" required /></div>
+    <button class="bt">ENTER</button>
+  </form>
+</body>
+</html>

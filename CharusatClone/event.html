@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>University Events</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #eef3f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      color: #003366;
+      font-size: 1.8rem;
+      border-left: 5px solid #003366;
+      padding-left: 10px;
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .event-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .event-card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .event-card p {
+      font-size: 0.95rem;
+    }
+
+    .tag-live {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #d10000;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    .tag-upcoming {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #007bff;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #003366;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CHARUSAT University Events</h1>
+    <p>Stay tuned with all live and upcoming happenings on campus</p>
+  </header>
+
+  <div class="section">
+    <h2> Live Now</h2>
+    <div class="events">
+      <div class="event-card">
+        <span class="tag-live">LIVE</span>
+        <h3>Coding Competition Finals</h3>
+        <p>Final round of Coder’s Arcade 2.0 is now live in CL-1 Lab. Join us to support your team!</p>
+      </div>
+      <div class="event-card">
+        <span class="tag-live">LIVE</span>
+        <h3>Robotics Show</h3>
+        <p>Experience real-time robotic demos and projects by students of the 4th semester.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2> Upcoming Events</h2>
+    <div class="events">
+      <div class="event-card">
+        <span class="tag-upcoming">Upcoming</span>
+        <h3>Tech Talk by Industry Experts</h3>
+        <p>Join us on July 20 for an inspiring session with top developers from Google and TCS.</p>
+      </div>
+      <div class="event-card">
+        <span class="tag-upcoming">Upcoming</span>
+        <h3>Annual Project Exhibition</h3>
+        <p>Scheduled on July 28. Display your semester projects and get feedback from industry judges.</p>
+      </div>
+      <div class="event-card">
+        <span class="tag-upcoming">Upcoming</span>
+        <h3>Charusat Hackathon</h3>
+        <p>Registration opens soon. Hack with your team and build amazing solutions in 24 hours!</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 CHARUSAT University | All Rights Reserved
+  </footer>
+
+</body>
+</html>

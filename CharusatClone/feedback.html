@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subject Faculty Feedback</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #e8f0fe;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .rating-group {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .rating-group label {
+      font-weight: normal;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 25px;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      border-top: 4px solid #005a9c; /* Blue border on top */
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-section img {
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 16px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .nav-links a.active {
+      color: #4CAF50; /* Green */
+    }
+
+    .btn-enquire {
+      background-color: #f26722;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+ 
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-section">
+      <img src="CHARUSAT_NEW.6cad095d.png" alt="CHARUSAT Logo">
+      <div>
+        <!-- <div style="font-size: 28px; font-weight: bold;">CHARUSAT<sup>®</sup></div> -->
+        <div style="font-size: 12px; color: #005a9c;">CHAROTAR UNIVERSITY OF SCIENCE AND TECHNOLOGY</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="result.html">Result</a>
+      <a href="profile.html">Profile</a>
+       <a href="feedback.html">Feedback</a>
+      <a href="regiater1.html">Register</a>
+    </div>
+
+    <button class="btn-enquire">Enquire Now – Admission 2025</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Subject Faculty Feedback</h2>
+    <form>
+      <label for="subject">Select Subject:</label>
+      <select id="subject" name="subject" required>
+        <option value="">-- Choose Subject --</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Physics">Physics</option>
+        <option value="Programming">Programming</option>
+        <option value="Mechanics">Mechanics</option>
+        <option value="Electronics">Electronics</option>
+      </select>
+
+      <label for="faculty">Faculty Name:</label>
+      <select id="faculty" name="faculty" required>
+        <option value="">-- Select Faculty --</option>
+        <option value="Dr. Sharma">Dr. Sharma</option>
+        <option value="Prof. Patel">Prof. Patel</option>
+        <option value="Ms. Mehta">Ms. Mehta</option>
+        <option value="Mr. Singh">Mr. Singh</option>
+      </select>
+
+      <label>Overall Rating:</label>
+      <div class="rating-group">
+        <label><input type="radio" name="rating" value="1"> 1</label>
+        <label><input type="radio" name="rating" value="2"> 2</label>
+        <label><input type="radio" name="rating" value="3"> 3</label>
+        <label><input type="radio" name="rating" value="4"> 4</label>
+        <label><input type="radio" name="rating" value="5"> 5</label>
+      </div>
+
+      <label for="feedback">Additional Comments:</label>
+      <textarea id="feedback" name="feedback" placeholder="Write your feedback..."></textarea>
+
+      <input type="submit" value="Submit Feedback">
+    </form>
+  </div>
+
+</body>
+</html>

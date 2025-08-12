@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - CHARUSAT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(charusatphoto.jpg);
+      background-size: cover;
+      background-position: center;
+       background-repeat: no-repeat;
+      height: 100vh;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      /* background: linear-gradient(#e66465, #9198e5); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-card {
+      /* background-color: white; */
+     background: rgba(255, 255, 255, 0.1);  
+  backdrop-filter: blur(30px); 
+      padding: 25px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-card h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-input {
+      position: relative;
+      margin: 15px 0;
+    }
+
+    .login-input input {
+      width: 100%;
+      padding: 10px 40px 10px 35px;
+      font-size: 14px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+    }
+
+    .login-input i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .btn {
+      background-color: #008CBA;
+      color: white;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #005f8b;
+    }
+
+    .form-card p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .form-card a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .form-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .form-card {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2>Login to Portal</h2>
+
+    <form action="index.html">
+      <div class="login-input">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Full Name" required>
+      </div>
+
+      <div class="login-input">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" placeholder="Email" required>
+      </div>
+
+      <div class="login-input">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <div class="login-input">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Confirm Password" required>
+      </div>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+      </div>
+
+      <button type="submit" class="btn" >Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="index.html">Register here</a></p>
+  </div>
+
+</body>
+</html>

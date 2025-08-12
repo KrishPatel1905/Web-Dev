@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CHARUSAT | Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: #008dc4;
+background: linear-gradient(90deg, rgba(0, 141, 196, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(237, 221, 83, 1) 100%);
+      /* background-image: url(/Screenshot\ 2025-07-11\ 215530.png) ; make sure the filename is correct */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;  
+      align-items: center;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.1); /* transparent white */
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+      color: #fff;
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .input-group input::placeholder {
+      color: #eee;
+    }
+
+    .input-group input:focus {
+      box-shadow: 0 0 8px #fdd835;
+    }
+
+    .input-group i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+    }
+
+    .signup-container button {
+      width: 100%;
+      background: #fdd835;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .signup-container button:hover {
+      background: #ffc107;
+    }
+
+    .signup-container p {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #eee;
+    }
+
+    .signup-container a {
+      color: #fdd835;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .signup-container {
+        margin: 20px;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Create Account</h2>
+    <form action="index.html">
+      <div class="input-group">
+        <input type="text" placeholder="Full Name" required>
+      </div>
+
+      <div class="input-group">
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <div class="input-group">
+        <input type="password" placeholder="Confirm Password" required>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f1f7ff;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: black;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #003366;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Your Student Dashboard</h1>
+  </header>
+
+  <section class="dashboard">
+    <!-- Existing Cards -->
+    <a href="profile.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/user.png" alt="Profile" />
+      <h3>Profile</h3>
+      <p>View and update your student information.</p>
+    </a>
+
+    <a href="result.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/graduation-cap.png" alt="Results" />
+      <h3>Results</h3>
+      <p>Check academic performance and grades.</p>
+    </a>
+
+    <a href="feedback.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/task.png" alt="Feedback" />
+      <h3>Feedback</h3>
+      <p>Give feedback to faculty or admin.</p>
+    </a>
+
+    <a href="event.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/event-accepted.png" alt="Events" />
+      <h3>Events</h3>
+      <p>See upcoming campus events.</p>
+    </a>
+
+    <a href="regiater1.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/planner.png" alt="Register" />
+      <h3>Register</h3>
+      <p>Register Now</p>
+    </a>
+
+    <a href="admin.html" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/admin-settings-male.png" alt="Admin" />
+      <h3>Admin</h3>
+      <p>Admin Login & Management</p>
+    </a>
+
+    <!-- New CHARUSAT Visit Cards -->
+    <a href="index.html" target="_blank" class="card">
+      <img src="https://img.icons8.com/ios-filled/100/internet.png" alt="CHARUSAT Site" />
+      <h3>CHARUSAT Website</h3>
+      <p>Visit the official university website.</p>
+    </a>
+   
+
+    
+  </section>
+
+</body>
+</html>
