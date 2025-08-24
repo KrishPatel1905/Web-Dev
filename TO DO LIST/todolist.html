@@ -5,155 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #626f92;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px;
-    }
-
-    .todo-container {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 350px;
-      align-items: center;
-      justify-content: center;
-      margin: 100px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    input {
-      width: 70%;
-      padding: 10px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      outline: none;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      border-color: #007bff;
-    }
-
-    button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      background: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-
-    li {
-      background: #f8f9fa;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: 0.3s;
-    }
-
-    li:hover {
-      background: #e9ecef;
-    }
-
-    li button {
-      background: #dc3545;
-      padding: 5px 10px;
-      border-radius: 6px;
-    }
-
-    li button:hover {
-      background: #a71d2a;
-    }
-
-    #clearBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #dc3545;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-#clearBtn:hover {
-  background: #a71d2a;
-}
-.todo-container {
-  position: relative; /* so clearBtn stays inside this box */
-}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="todo-container">
     <h2>My To-Do List</h2>
-    <input type="text" placeholder="Enter the Today Task" id="task" type="date">
-    <button id="clearBtn">Clear All</button>
-      
+    <input type="text" placeholder="Enter the Today Task" id="task">
+    
+    <button id="clearBtn" onclick="clearall()">Clear All</button>
     <button onclick="add()">Add</button>
+
     <ul id="taskList"></ul>
   </div>
 
-  <script>
-    function add() {
-     
-
-      let task = document.getElementById("task");
-      const taskinput = task.value.trim();
-
-      if (taskinput === "") return;
-
-      let li = document.createElement("li");
-      li.textContent = taskinput;
-       let now = new Date();
-      let datestr = now.toLocaleString();
-      li.innerHTML = taskinput + "\n\n<br><small>Added on:<br> " + datestr + "</small>";
-
-      let removebtn = document.createElement("button");
-      removebtn.textContent = "Remove";
-
-      removebtn.onclick = function () {
-        li.remove();
-      };
-
-      li.appendChild(removebtn);
-      document.getElementById("taskList").appendChild(li);
-
-      document.getElementById("clearbtn").onclick= function()
-      {
-        document.getElementById("taskList").innerHTML = "";
-      };
-      
-
-      task.value = "";
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
