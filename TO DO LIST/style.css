@@ -93,7 +93,15 @@ li button:hover {
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
+
+  
 }
+li input[type="checkbox"]:checked {
+  accent-color: green;      
+}
+
+
+
 
 #clearBtn:hover {
   background: #a71d2a;
