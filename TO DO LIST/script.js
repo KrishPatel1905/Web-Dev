@@ -1,4 +1,4 @@
-const { createElement } = require("react");
+
 
   function add() {
     let task = document.getElementById("task");
@@ -15,7 +15,7 @@ const { createElement } = require("react");
   
 
     let removebtn = document.createElement("button");
-    removebtn.textContent = "Remove";
+    removebtn.textContent = "X";
 
     removebtn.onclick = function () {
       li.remove();
@@ -27,7 +27,7 @@ const { createElement } = require("react");
        
    checkbox.onchange = function () {
   if (checkbox.checked) {
-    li.style.textDecoration = "line-through";
+    li.style.textDecoration = "line-through ";
   } else {
     li.style.textDecoration = "none";
   }
