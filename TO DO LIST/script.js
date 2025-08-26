@@ -35,6 +35,8 @@ function add() {
 
   task.value = "";
   saveTask();
+
+ 
 }
 
 let demo = document.getElementById("taskList");
@@ -52,4 +54,15 @@ function loadTask() {
   demo.innerHTML = localStorage.getItem("tasks") || "";
 }
 
-window.onload = loadTask;  
+window.onload = loadTask;
+
+let task = document.getElementById("task");
+
+
+ task.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      add();
+    }
+  })
+
+
