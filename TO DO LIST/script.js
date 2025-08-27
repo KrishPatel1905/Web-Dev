@@ -13,7 +13,7 @@ function add() {
 
 
   let removebtn = document.createElement("button");
-  removebtn.textContent = "X";
+  removebtn.textContent = "-";
   removebtn.onclick = function () {
     li.remove();
     saveTask();
@@ -37,8 +37,6 @@ function add() {
 
   task.value = "";
   saveTask();
-
- 
 }
 
 let demo = document.getElementById("taskList");
