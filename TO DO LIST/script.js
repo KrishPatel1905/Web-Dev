@@ -9,6 +9,8 @@ function add() {
   let now = new Date();
   let datestr = now.toLocaleString();
   li.innerHTML = taskinput + "\n\n<br><small>Added on:<br> " + datestr + "</small>";
+    // li.innerHTML = taskinput ;
+
 
   let removebtn = document.createElement("button");
   removebtn.textContent = "X";
