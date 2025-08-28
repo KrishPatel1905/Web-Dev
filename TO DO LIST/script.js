@@ -26,8 +26,12 @@ function add() {
   checkbox.onchange = function () {
     if (checkbox.checked) {
       li.style.textDecoration = "line-through ";
+        li.classList.remove("pending");
+  li.classList.add("completed");
     } else {
       li.style.textDecoration = "none";
+        li.classList.remove("completed");
+  li.classList.add("pending");
     }
     saveTask();
   };
@@ -37,6 +41,7 @@ function add() {
 
   task.value = "";
   saveTask();
+  li.classList.add("pending");  
 }
 
 let demo = document.getElementById("taskList");
@@ -65,4 +70,15 @@ let task = document.getElementById("task");
     }
   })
 
+document.getElementById("pendingbtn").onclick = () => {
+  document.querySelectorAll("#taskList li").forEach(li => {
+    li.style.display = li.classList.contains("pending") ? "list-item" : "none";
+  });
+};
 
+
+document.getElementById("completedbtn").onclick = () => {
+  document.querySelectorAll("#taskList li").forEach(li => {
+    li.style.display = li.classList.contains("completed") ? "list-item" : "none";
+  });
+};
