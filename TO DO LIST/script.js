@@ -9,7 +9,7 @@ function add() {
   let now = new Date();
   let datestr = now.toLocaleString();
   li.innerHTML = taskinput + "\n\n<br><small>Added on:<br> " + datestr + "</small>";
-    // li.innerHTML = taskinput ;
+  // li.innerHTML = taskinput ;
 
 
   let removebtn = document.createElement("button");
@@ -26,12 +26,12 @@ function add() {
   checkbox.onchange = function () {
     if (checkbox.checked) {
       li.style.textDecoration = "line-through ";
-        li.classList.remove("pending");
-  li.classList.add("completed");
+      li.classList.remove("pending");
+      li.classList.add("completed");
     } else {
       li.style.textDecoration = "none";
-        li.classList.remove("completed");
-  li.classList.add("pending");
+      li.classList.remove("completed");
+      li.classList.add("pending");
     }
     saveTask();
   };
@@ -41,7 +41,7 @@ function add() {
 
   task.value = "";
   saveTask();
-  li.classList.add("pending");  
+  li.classList.add("pending");
 }
 
 let demo = document.getElementById("taskList");
@@ -64,21 +64,39 @@ window.onload = loadTask;
 let task = document.getElementById("task");
 
 
- task.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      add();
+task.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    add();
+  }
+})
+
+document.getElementById("pendingbtn").onclick = function () {
+  filterTasks("pending");
+};
+
+document.getElementById("completedbtn").onclick = function () {
+  filterTasks("completed");
+};
+
+function filterTasks(status) {
+  let tasks = document.querySelectorAll("#taskList li");
+  tasks.forEach(function (li) {
+    if (li.classList.contains(status)) {
+      li.style.display = "";
+    } else {
+      li.style.display = "none";
     }
-  })
-
-document.getElementById("pendingbtn").onclick = () => {
-  document.querySelectorAll("#taskList li").forEach(li => {
-    li.style.display = li.classList.contains("pending") ? "list-item" : "none";
   });
+}
+
+document.getElementById("allbtn").onclick = function () {
+  showAllTasks();
 };
 
-
-document.getElementById("completedbtn").onclick = () => {
-  document.querySelectorAll("#taskList li").forEach(li => {
-    li.style.display = li.classList.contains("completed") ? "list-item" : "none";
+function showAllTasks() {
+  let tasks = document.querySelectorAll("#taskList li");
+  tasks.forEach(function (li) {
+    li.style.display = "";
   });
-};
+}
+
