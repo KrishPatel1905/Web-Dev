@@ -8,7 +8,7 @@ function add() {
 
   let now = new Date();
   let datestr = now.toLocaleString();
-  li.innerHTML = taskinput + "\n\n<br><small>Added on:<br> " + datestr + "</small>";
+  li.innerHTML = taskinput + "\n\n<br><small>Added on:<br> " +datestr + "</small>";
   // li.innerHTML = taskinput ;
 
 
@@ -30,17 +30,16 @@ function add() {
       li.classList.add("completed");
     } else {
       li.style.textDecoration = "none";
-      li.classList.remove("completed");
-      li.classList.add("pending");
+          // li.classList.remove("completed");
+          // li.classList.add("pending");
     }
-    saveTask();
   };
 
   li.appendChild(removebtn);
   document.getElementById("taskList").appendChild(li);
 
   task.value = "";
-  saveTask();
+ 
   li.classList.add("pending");
 }
 
@@ -48,18 +47,10 @@ let demo = document.getElementById("taskList");
 
 function clearall() {
   demo.innerHTML = "";
-  saveTask();
+  
 }
 
-function saveTask() {
-  localStorage.setItem("tasks", demo.innerHTML);
-}
 
-function loadTask() {
-  demo.innerHTML = localStorage.getItem("tasks") || "";
-}
-
-window.onload = loadTask;
 
 let task = document.getElementById("task");
 
