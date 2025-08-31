@@ -69,16 +69,16 @@ document.getElementById("completedbtn").onclick = function () {
   filterTasks("completed");
 };
 
-function filterTasks(status) {
-  let tasks = document.querySelectorAll("#taskList li");
-  tasks.forEach(function (li) {
-    if (li.classList.contains(status)) {
-      li.style.display = "";
-    } else {
-      li.style.display = "none";
-    }
-  });
-}
+  function filterTasks(status) {
+    let tasks = document.querySelectorAll("#taskList li");
+    tasks.forEach(function (li) {
+      if (li.classList.contains(status)) {
+        li.style.display = "";
+      } else {
+        li.style.display = "none";
+      }
+    });
+  }
 
 document.getElementById("allbtn").onclick = function () {
   showAllTasks();
