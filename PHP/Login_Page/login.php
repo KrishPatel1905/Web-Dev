@@ -2,21 +2,27 @@
 $conn = mysqli_connect("localhost", "root", "", "democlass");
 
 if (!$conn) {
-    die("DB connection failed");
+    die("DB connection failed: " . mysqli_connect_error());
 }
 
-if ($_POST) {
-    $name = $_POST['username'];
-    $pass = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $Name     = $_POST['fullname'];
+    $email    = $_POST['email'];
+    $mobile   = $_POST['mobile'];
+    $username = $_POST['username'];
+    $pass     = $_POST['password'];
 
-    $sql = "INSERT INTO democlass (name, pass) VALUES ('$name', '$pass')";
-    if (mysqli_query($conn, $sql)) {
-        echo "User registered!";
+    $sql = "INSERT INTO democlass (Name, email, mobile, username, pass) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssss", $Name, $email, $mobile, $username, $pass);
+
+    if ($stmt->execute()) {
+        echo "✅ Registration successful!";
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "❌ Error: " . $stmt->error;
     }
-} else {
-    echo "Fill the form first.";
+
+    $stmt->close();
 }
 
 mysqli_close($conn);
