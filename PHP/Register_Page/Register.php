@@ -16,8 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $Name, $email, $mobile, $username, $pass);
 
-    if ($stmt->execute()) {
+    if ($stmt->execute()) { 
         echo "✅ Registration successful!";
+        
     } else {
         echo "❌ Error: " . $stmt->error;
     }
