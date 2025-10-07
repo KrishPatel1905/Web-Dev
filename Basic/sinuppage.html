@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #f7f7f7;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .sinup {
+        justify-content: center;
+       
+        background-color: ;
+        display: flex;
+      }
+      .btn {
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        width: 170px;
+        color: white;
+        background-color: #007bff;
+      }
+      .btn :hover {
+        background-color: #0056b3;
+      }
+      .header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      #checkbox {
+        margin: 10px;
+        padding: 10px;
+      }
+      .container {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px;
+        width: 320px;
+        margin: 100px auto;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid;
+      }
+
+      input :focus {
+        outline: none;
+        border-bottom: 2px solid #007bff;
+      }
+      #checkbox {
+        margin-right: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="header">Sign Up</h2>
+      <div class="sinup">
+        <form action="">
+          <label for="name">Name:</label>
+
+          <input type="text" placeholder=" Name " />
+          <label for="email">Email:</label>
+          <input type="email" placeholder=" Email " />
+          <label for="MO">Mo</label>
+          <input type="text" placeholder=" MO " />
+
+          <label for="password">Password</label>
+          <input type="text" placeholder=" Password " />
+          <br />
+          <button class="btn">Submit</button>
+
+          <div><input type="checkbox" id="checkbox" />Remeber Me</div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .body{
+            justify-content: center;
+             background: #f5f6fa;
+             display: flex;
+             font-family: Arial, Helvetica, sans-serif;
+             margin:0px ;
+             padding: 50px;
+        }
+        .task{
+
+        }
+        #h2{
+            background-color: black;
+            color:blue;
+            justify-content: center;
+            text-align: center;
+
+        }
+        li
+        {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+        button{
+            padding: 6px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 8px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+        .todo{
+            justify-content: center;
+            text-align: center;
+            background-color: #f5f6fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="todo">
+    <h2 id="h2">TO DO LIST</h2>
+    <input type="text" placeholder="Enter The Task" id="Task">
+    <button onclick="addtask()">Add Task</button>
+
+    <ul id="list"></ul>
+    </div>
+
+</body>
+<script>
+   function addtask()
+   {
+    let input = document.getElementById("Task");
+    let task = input.value.trim();
+    if(task=="")return ;
+     
+    let li = document.createElement("li")
+    li.textContent = task;
+
+    let btn = document.createElement("button");
+    btn.textContent ="X";
+    btn.onclick = function()
+    {
+        li.remove();
+    }
+    li.appendChild(btn);
+    document.getElementById("list").appendChild(li);
+    intput.value ="";
+
+   }
+</script>
+</html>

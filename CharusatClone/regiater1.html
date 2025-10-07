@@ -1,140 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CHARUSAT | Signup</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      min-height: 100vh;
-      background: #008dc4;
-background: linear-gradient(90deg, rgba(0, 141, 196, 1) 0%, rgba(0, 0, 0, 1) 100%, rgba(237, 221, 83, 1) 100%);
-      /* background-image: url(/Screenshot\ 2025-07-11\ 215530.png) ; make sure the filename is correct */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;  
-      align-items: center;
-    }
-
-    .signup-container {
-      background: rgba(255, 255, 255, 0.1); /* transparent white */
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-      width: 100%;
-      max-width: 400px;
-      color: #fff;
-    }
-
-    .signup-container h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-weight: 600;
-    }
-
-    .input-group {
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: 12px 40px 12px 15px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-size: 16px;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-
-    .input-group input::placeholder {
-      color: #eee;
-    }
-
-    .input-group input:focus {
-      box-shadow: 0 0 8px #fdd835;
-    }
-
-    .input-group i {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #555;
-    }
-
-    .signup-container button {
-      width: 100%;
-      background: #fdd835;
-      border: none;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .signup-container button:hover {
-      background: #ffc107;
-    }
-
-    .signup-container p {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-      color: #eee;
-    }
-
-    .signup-container a {
-      color: #fdd835;
-      text-decoration: none;
-    }
-
-    @media (max-width: 480px) {
-      .signup-container {
-        margin: 20px;
-        padding: 30px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  body { background-color: #f3f4f6; }
+  .strength-bar { height: 6px; border-radius: 4px; background-color: #e5e7eb; margin-top: 4px; }
+  .strength-fill { height: 6px; border-radius: 4px; transition: width 0.3s; }
+</style>
 </head>
-<body>
-
-  <div class="signup-container">
-    <h2>Create Account</h2>
-    <form action="index.html">
-      <div class="input-group">
-        <input type="text" placeholder="Full Name" required>
+<body class="flex justify-center items-center min-h-screen">
+<div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Register</h2>
+  <form id="registrationForm" class="space-y-4">
+    <div>
+      <label class="block text-gray-700">Full Name</label>
+      <input type="text" name="fullname" id="fullname" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div>
+      <label class="block text-gray-700">Email</label>
+      <input type="email" name="email" id="email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div>
+      <label class="block text-gray-700">Password</label>
+      <input type="password" name="password" id="password" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <div class="strength-bar">
+        <div id="strengthFill" class="strength-fill w-0"></div>
       </div>
+    </div>
+    <div>
+      <label class="block text-gray-700">Confirm Password</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div>
+      <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md font-semibold">Register</button>
+    </div>
+  </form>
+</div>
 
-      <div class="input-group">
-        <input type="email" placeholder="Email Address" required>
-      </div>
+<script>
+const form = document.getElementById('registrationForm');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
+const strengthFill = document.getElementById('strengthFill');
 
-      <div class="input-group">
-        <input type="password" placeholder="Password" required>
-      </div>
+password.addEventListener('input', () => {
+  const val = password.value;
+  let strength = 0;
+  if(val.length >= 6) strength++;
+  if(/[A-Z]/.test(val)) strength++;
+  if(/[0-9]/.test(val)) strength++;
+  if(/[^A-Za-z0-9]/.test(val)) strength++;
+  const width = (strength / 4) * 100;
+  strengthFill.style.width = width + '%';
+  if(strength <= 1) strengthFill.style.backgroundColor = 'red';
+  else if(strength === 2) strengthFill.style.backgroundColor = 'orange';
+  else if(strength === 3) strengthFill.style.backgroundColor = 'yellow';
+  else strengthFill.style.backgroundColor = 'green';
+});
 
-      <div class="input-group">
-        <input type="password" placeholder="Confirm Password" required>
-      </div>
-
-      <button type="submit">Sign Up</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
-  </div>
-
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const fullname = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const pass = password.value;
+  const confirmPass = confirmPassword.value;
+  
+  if(fullname.length < 3){
+    alert('Full Name must be at least 3 characters.');
+    return;
+  }
+  if(!/\S+@\S+\.\S+/.test(email)){
+    alert('Enter a valid email.');
+    return;
+  }
+  if(pass.length < 6){
+    alert('Password must be at least 6 characters.');
+    return;
+  }
+  if(pass !== confirmPass){
+    alert('Passwords do not match.');
+    return;
+  }
+  alert('Registration successful!');
+  form.reset();
+  strengthFill.style.width = '0';
+});
+</script>
 </body>
 </html>
