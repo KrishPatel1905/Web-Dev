@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Data</title>
+</head>
+<body>
+  <h2>FETCH DATA</h2>
+  <ul id="f"></ul>
+
+  <script>
+    const data = [
+      {"id":1,"name":"krish"},
+      {"id":2,"name":"heet"}
+    ];
+
+    let l = document.getElementById("f");
+
+    data.forEach(item => {
+      let li = document.createElement("li");
+      li.textContent = `${item.id} - ${item.name}`;
+      l.appendChild(li);
+    });
+  </script>
+</body>
+</html>

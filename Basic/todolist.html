@@ -56,6 +56,7 @@
     <h2 id="h2">TO DO LIST</h2>
     <input type="text" placeholder="Enter The Task" id="Task">
     <button onclick="addtask()">Add Task</button>
+    <button onclick="clearTasks()">Remove</button>
 
     <ul id="list"></ul>
     </div>
@@ -77,10 +78,17 @@
     {
         li.remove();
     }
-    li.appendChild(btn);
-    document.getElementById("list").appendChild(li);
-    intput.value ="";
+        li.appendChild(btn);
+        document.getElementById("list").appendChild(li);
+    input.value ="";
+
+  
+ 
 
    }
+
+     function clearTasks() {
+        document.getElementById("list").innerHTML = "";
+    }
 </script>
 </html>

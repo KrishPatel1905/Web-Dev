@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    label { display: block; }
+    .error { color: red; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="signup">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" placeholder="Name" id="name"/>
+      <div id="nameErr" class="error"></div>
+
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Email" id="email"/>
+      <div id="emailErr" class="error"></div>
+
+      <label for="Mo">Mo:</label>
+      <input type="text" placeholder="Mobile" id="Mo"/>
+      <div id="MoErr" class="error"></div>
+
+      <label for="Password">Password:</label>
+      <input type="password" placeholder="Password" id="Password"/>
+      <div id="passErr" class="error"></div>
+
+      <br />
+      <button type="button" class="btn" onclick="check()">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function check() {
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let Mo = document.getElementById("Mo");
+      let password = document.getElementById("Password");
+
+      let ne = document.getElementById("nameErr");
+      let ee = document.getElementById("emailErr");
+      let me = document.getElementById("MoErr");
+      let pe = document.getElementById("passErr");
+
+      ne.textContent = "";
+      ee.textContent = "";
+      me.textContent = "";
+      pe.textContent = "";
+
+      let ok = true;
+
+      if (name.value === "") {
+        ne.textContent = "Please enter your name";
+        ok = false;
+      }
+      if (email.value === "") {
+        ee.textContent = "Please enter your email";
+        ok = false;
+      }
+      if (Mo.value === "") {
+        me.textContent = "Please enter your mobile number";
+        ok = false;
+      }
+      if (password.value === "") {
+        pe.textContent = "Please enter your password";
+        ok = false;
+      }
+
+      return ok;
+    }
+  </script>
+</body>
+</html>
