@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="">
     <style>
+      *{
+        /* background-color: crimson; */
+      }
       body {
         background-color: #f7f7f7;
         font-family: Arial, sans-serif;
@@ -21,7 +25,7 @@
       .sinup {
         justify-content: center;
        
-        background-color: ;
+       
         display: flex;
       }
       .btn {
@@ -76,20 +80,46 @@
         <form action="">
           <label for="name">Name:</label>
 
-          <input type="text" placeholder=" Name " />
+          <input type="text" placeholder=" Name "  id="name"/>
           <label for="email">Email:</label>
-          <input type="email" placeholder=" Email " />
+          <input type="email" placeholder=" Email " id="email"/>
           <label for="MO">Mo</label>
-          <input type="text" placeholder=" MO " />
+          <input type="text" placeholder=" MO "  id="Mo"/>
 
           <label for="password">Password</label>
-          <input type="text" placeholder=" Password " />
+          <input type="password" placeholder=" Password " />
           <br />
           <button class="btn">Submit</button>
 
           <div><input type="checkbox" id="checkbox" />Remeber Me</div>
         </form>
       </div>
+
+    <div id="output">
+
+    </div>
     </div>
   </body>
+
+    <script>
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit",function(e)
+                 {
+                    e.preventDefault();
+                    let name = document.getElementById("name").value;
+                    let email = document.getElementById("email").value;
+                    let mo = document.getElementById("Mo").value;
+
+                    document.getElementById("output").innerHTML=
+
+                   ` <h3>Detail</h3>
+                    <p><b>Name:</b> ${name}</p>
+                    <p><b>Email:</b>${email}</p>
+                      <p><b>Mo:</b> ${mo}</p>`;
+
+                    
+                    
+                 });
+    </script>
 </html>
