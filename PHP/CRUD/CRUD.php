@@ -1,18 +1,23 @@
 <?php
-$conn = mysqli_connect("localhost","root","","crud_example");
+$conn = new mysqli("localhost","root","","crud_example");
 
-if(isset($_POST["add"])){
-    mysqli_query($conn,"INSERT INTO users (name,email) VALUES ('{$_POST['name']}','{$_POST['email']}')");
 
-}
+ if(isset($_POST['add']))
+ {
+    $n = $_POST['name'];
+    $e = $_POST['email'];
+    $conn->query("INSERT INTO users(name,email) VALUES ('$n','$e')");
+ }
 
-if (isset($_GET['delete'])) {
-    mysqli_query($conn, "DELETE FROM users WHERE id={$_GET['delete']}");
-}
+ if(isset($_POST['del']))
+ {
+    $id = $_GET['del'];
+    $conn->query("DELETE FROM users WHERE id = $id");
 
-$result = mysqli_query($conn, "SELECT * FROM users");
-$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-?>  
+ }
+ ?>
+
+
 
 
 
@@ -24,30 +29,34 @@ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <title>Document</title>
 </head>
 <body>
-    <h2>Add Detail </h2>
-    <form method="post" action="">
-        <input type="text" name="name" id="" placeholder="name">
-        <input type="text" name="email" id="" placeholder="email">
-        <button name="add">Add</button>
+    <h3>SIMPLE PHP CRUD </h3>
+    <form  method="post">
+        Name : <input type="text" name="name">
+        Email : <input type="text" name="email">
+
+        <input type="submit" name="add" value="add">
     </form>
-<h3>Users List</h3>
-<table border="1" cellpadding="8">
-    <tr><th>ID</th><th>Name</th><th>Email</th><th>Action</th></tr>
-    <?php foreach($users as $u): ?>
+    <table>
     <tr>
-        <form method="post">
-            <td><?= $u['id'] ?></td>
-            <td><input type="text" name="name" value="<?= $u['name'] ?>"></td>
-            <td><input type="email" name="email" value="<?= $u['email'] ?>"></td>
-            <td>
-                <input type="hidden" name="id" value="<?= $u['id'] ?>">
-                <button name="update">Update</button>
-                <a href="?delete=<?= $u['id'] ?>">Delete</a>
-            </td>
-        </form>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Deleted </th>
     </tr>
-    <?php endforeach; ?>
-</table>
+    <?php
+    $r = $conn->query("SELECT * FROM  users");
+    while($row = $r->fetch_assoc())
+    {
+            echo "<tr>
+            <td>{$row['id']}</td>
+            <td>{$row['name']}</td> 
+                <td>{$row['email']}</td>
+<tr>";
+            
+    }
+    ?>
+    
+
+    </table>
 </body>
 </html>
-
