@@ -19,7 +19,7 @@ class Car implements Vehicle {
 // Implement interface in Bike class
 class Bike implements Vehicle {
     public function start() {
-        echo "Bike started 🏍️<br>";
+        echo "Bike started 🏍️<br>:";
     }
 
     public function stop() {
